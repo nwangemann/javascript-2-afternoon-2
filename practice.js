@@ -217,7 +217,13 @@ function addItem(myGroceryList, item) {
 */
 
 //Code Here
-
+function maker (){
+  let arr = []
+  for (let i = 1; i < 216; i++){
+    arr.push(i)
+  }
+  return arr
+}
 ////////// PROBLEM 10 //////////
 
 // Do not edit the code below.
@@ -231,7 +237,14 @@ var numbers = [5, "9", 16, 19, "25", "34", 48];
 */
 
 //Code Here
-
+function addTen (numbers) {
+  newArray = []
+  for (let i = 0; i < numbers.length; i++){
+    let newNum = parseInt(numbers[i]) + 10
+    newArray.push(newNum);
+  }
+  return newArray
+}
 ////////// PROBLEM 11 //////////
 
 // Do not edit the code below.
@@ -254,7 +267,13 @@ for (var i = 0; i < num2; i++) {
 */
 
 //Code Here
-
+function longer (arr1, arr2){
+  if (arr1.length > arr2.length){
+    return arr1
+  } else {
+    return arr2
+  }
+}
 /*
   As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -264,7 +283,15 @@ for (var i = 0; i < num2; i++) {
 */
 
 //Code Here
-
+function both (arr1, arr2){
+  let arr3 = []
+  for (let i = 0; i < arr1.length; i++){
+    if (arr1.indexOf(arr2[i]) == -1){
+      arr3.push(arr1[i])
+    }
+  }
+  return arr3
+}
 ////////// PROBLEM 12 //////////
 
 // Do not edit the code below.
@@ -304,13 +331,37 @@ var colt = {
 
 //Code Here
 
+function objectMaker (temp, nam, positio, spiritAnima){
+  let obj = {
+    name: nam,
+    position: positio,
+    spiritAnimal: spiritAnima
+  }
+  devMountainEmployees.push(obj)
+  return devMountainEmployees
+}
+objectMaker('colt', 'Colt', 'Everything really', 'Young Male Horse')
+objectMaker('ryan', 'Ryan', 'Marketing', 'fox')
+objectMaker('cahlan', 'Cahlan', 'CEO', 'Butterfly')
+objectMaker('joe', 'Joe', 'Instructor', 'Honey Badger')
+
 /*
   Now let's say Cahlan has to take a leave of absence.
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
 //Code Here
+function leaveOfAbsence (arr){
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i].name === 'Cahlan'){
+      arr.splice(i, 1)
+      return arr
+    } else {
 
+    }
+  }
+}
+leaveOfAbsence(devMountainEmployees);
 ////////// PROBLEM 13 //////////
 
 /*
@@ -319,14 +370,23 @@ var colt = {
 */
 
 //Code Here
+users = []
+function objectMaker (na, em, pass, user) {
+  let obj = {
+    name: na,
+    email: em,
+    password: pass,
+    username: user
+  }
+  users.push(obj);
+}
 
-/*
-  Now add three user objects to your users array. Each user object should contain the following properties: name, email, password, username.
+//   Now add three user objects to your users array. Each user object should contain the following properties: name, email, password, username.
 
-  Include the following user1 object as one of the objects in your array.
+//   Include the following user1 object as one of the objects in your array.
   
-  MAKE SURE TO DO THIS IN THE SECTION BELOW WHERE USER1 IS DECLARED
-*/
+//   MAKE SURE TO DO THIS IN THE SECTION BELOW WHERE USER1 IS DECLARED
+// */
 
 // Do not edit the code below.
 var user1 = {
@@ -338,6 +398,9 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+objectMaker('Mark McIver', 'mark.mciver@devmounta.in', 'hunter2', 'ihazcode')
+objectMaker('Sammy Sosa', 'sammyslammajamma@hotmail.com', 'password1', 'idunno')
+objectMaker('Testing Testing', 'onetwoonetwo@testing.com', 'nopasszone', 'whatever')
 
 /*
   Now you have a very common data structure. 
@@ -350,7 +413,17 @@ var user1 = {
 */
 
 //Code Here
+function accountDeleter (email){
+  for (let i = 0; i < users.length; i++){
+    if (email === users[i].email){
+      users.splice(i, 1)
+      return users
+    } else {
 
+    }
+  } 
+  }
+accountDeleter('mark.mciver@devmounta.in');
 /*
   The activity we just did is very much how data works in 'the real world'.
 */
